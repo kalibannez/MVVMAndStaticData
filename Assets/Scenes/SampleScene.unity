@@ -604,13 +604,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6173633976147231445, guid: 95edc622d32db4d998e6c19bd4491bf2, type: 3}
-      propertyPath: _weaponCardPrefab
-      value: 
-      objectReference: {fileID: 6304620948824425515, guid: 626520227c5c94afaab5e601c78b62d4, type: 3}
     - target: {fileID: 7469029947321012051, guid: 95edc622d32db4d998e6c19bd4491bf2, type: 3}
       propertyPath: m_Name
       value: ChoseWeaponScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 7745869489489901474, guid: 95edc622d32db4d998e6c19bd4491bf2, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8408805150141578461, guid: 95edc622d32db4d998e6c19bd4491bf2, type: 3}
       propertyPath: m_AnchorMax.x
@@ -622,22 +622,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8408805150141578461, guid: 95edc622d32db4d998e6c19bd4491bf2, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8849746755833529684, guid: 95edc622d32db4d998e6c19bd4491bf2, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8849746755833529684, guid: 95edc622d32db4d998e6c19bd4491bf2, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8849746755833529684, guid: 95edc622d32db4d998e6c19bd4491bf2, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8849746755833529684, guid: 95edc622d32db4d998e6c19bd4491bf2, type: 3}
-      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

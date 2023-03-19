@@ -22,7 +22,7 @@ MonoBehaviour:
     Damage: 10000
     Calibre: 500
     Title: Fat Man
-    Description: '"Fat Man" (also known as Mark III'
+    Description: '"Fat Man" (also known as Mark III)'
   - Id: 1002
     Damage: 50
     Calibre: 5.45

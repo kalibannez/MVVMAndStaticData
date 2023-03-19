@@ -5,7 +5,11 @@ using UniRx;
 using UnityEngine;
 using Zenject;
 
-public class ChoseWeaponScreen : MonoBehaviour {
+interface IChoseWeaponScreen {
+    public void Init(IChoseWeaponViewModel weaponViewModel);
+}
+
+public class ChoseWeaponScreen : MonoBehaviour, IChoseWeaponScreen {
 
     [SerializeField]
     private WeaponCardItem _weaponCardPrefab;
@@ -40,7 +44,7 @@ public class ChoseWeaponScreen : MonoBehaviour {
                 return;
             }
 
-            _chosenWeaponTitle.text = $"Chosen weapon is {weaponStaticData.Title}";
+            _chosenWeaponTitle.text = $"Chosen weapon: <color=green><b>{weaponStaticData.Title}</b></color>";
 
             foreach (var weaponCardItem in _weaponCards) {
                 weaponCardItem.SetChosen(weaponCardItem.Id == weaponId);
