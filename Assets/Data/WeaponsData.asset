@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a63161d11b1974f46a21eadd18469998, type: 3}
+  m_Name: WeaponsData
+  m_EditorClassIdentifier: 
+  Datas:
+  - Id: 1000
+    Damage: 30
+    Calibre: 7.62
+    Title: Rifle
+    Description: An AR-15 style rifle
+  - Id: 1001
+    Damage: 10000
+    Calibre: 500
+    Title: Fat Man
+    Description: '"Fat Man" (also known as Mark III'
+  - Id: 1002
+    Damage: 50
+    Calibre: 5.45
+    Title: AK-47
+    Description: The AK-47, officially known as the Avtomat Kalashnikova
