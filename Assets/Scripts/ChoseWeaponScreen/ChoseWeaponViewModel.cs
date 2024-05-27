@@ -1,21 +1,23 @@
 using UniRx;
 
 public interface IChoseWeaponViewModel {
-    public void Init(ChoseWeaponModel model);
+    public void Init(IChoseWeaponModel model);
 
     public ReactiveProperty<int> ChosenWeapon { get; }
 
     public void SelectWeapon(int id);
+
+    public WeaponsStaticData GetWeaponsStaticData();
 }
 
 public class ChoseWeaponViewModel : IChoseWeaponViewModel {
-    private ChoseWeaponModel _model;
+    private IChoseWeaponModel _model;
     
     public ReactiveProperty<int> ChosenWeapon { get; } = new();
 
-    public void Init(ChoseWeaponModel model) {
+    public void Init(IChoseWeaponModel model) {
         _model = model;
-        _model.UpdateViewModel = UpdateViewModel;
+        _model.BindUpdater(UpdateViewModel);
         UpdateViewModel();
     }
 
@@ -23,8 +25,7 @@ public class ChoseWeaponViewModel : IChoseWeaponViewModel {
         _model.ChoseWeapon(id);
     }
 
-    private void UpdateViewModel() {
-        ChosenWeapon.SetValueAndForceNotify(_model.ChosenWeaponId);
-    }
+    public WeaponsStaticData GetWeaponsStaticData() => _model.GetWeaponsStaticData();
 
+    private void UpdateViewModel() => ChosenWeapon.SetValueAndForceNotify(_model.ChosenWeaponId);
 }

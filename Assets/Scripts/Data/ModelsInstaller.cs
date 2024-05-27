@@ -4,7 +4,7 @@ public class ModelsInstaller : MonoInstaller {
 
     public override void InstallBindings() {
         Container.Bind<IChoseWeaponViewModel>().To<ChoseWeaponViewModel>().AsSingle().NonLazy();
-        Container.Bind<ChoseWeaponModel>().AsSingle().NonLazy();
+        Container.Bind<IChoseWeaponModel>().To<ChoseWeaponModel>().AsSingle().NonLazy();
     }
 
 }

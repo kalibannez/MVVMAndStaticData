@@ -10,7 +10,7 @@ public class EntryPoint : MonoBehaviour {
     private IChoseWeaponViewModel _weaponViewModel;
 
     [Inject]
-    private ChoseWeaponModel _weaponModel;
+    private IChoseWeaponModel _weaponModel;
 
     void Start() {
         ChoseWeaponScreenBinder.Bind(_choseWeaponScreen.GetComponent<IChoseWeaponScreen>(), _weaponViewModel, _weaponModel);
@@ -18,9 +18,9 @@ public class EntryPoint : MonoBehaviour {
 }
 
 static class ChoseWeaponScreenBinder {
-    public static void Bind(IChoseWeaponScreen screen, IChoseWeaponViewModel viewModel, ChoseWeaponModel model) {
-        screen.Init(viewModel);
+    public static void Bind(IChoseWeaponScreen screen, IChoseWeaponViewModel viewModel, IChoseWeaponModel model) {
         model.Init();
         viewModel.Init(model);
+        screen.Init(viewModel);
     }
 }

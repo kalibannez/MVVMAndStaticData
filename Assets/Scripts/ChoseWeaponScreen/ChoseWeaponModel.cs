@@ -3,12 +3,21 @@ using System.Linq;
 using UnityEngine;
 using Zenject;
 
-public class ChoseWeaponModel {
+public interface IChoseWeaponModel
+{
+    public void BindUpdater(Action updateViewModel);
 
-    public Action UpdateViewModel;
+    public void ChoseWeapon(int id);
+    public WeaponsStaticData GetWeaponsStaticData();
+    public int ChosenWeaponId { get; }
+    void Init();
+}
 
+public class ChoseWeaponModel: IChoseWeaponModel {
     public int ChosenWeaponId { get; private set; }
 
+    private Action _updateViewModel;
+    
     [Inject]
     private StaticData _staticData;
 
@@ -17,18 +26,22 @@ public class ChoseWeaponModel {
     }
 
     private void RestoreSavedData() {
-        ChosenWeaponId = 1000;
+        ChoseWeapon(1001);
     }
+
+    public void BindUpdater(Action updateViewModel) => _updateViewModel = updateViewModel;
 
     public void ChoseWeapon(int id) {
         var weaponStaticData = _staticData.WeaponsStatic.Datas.FirstOrDefault(item => item.Id == id);
         
         if (weaponStaticData != null) {
             ChosenWeaponId = id;
-            UpdateViewModel?.Invoke();
+            _updateViewModel?.Invoke();
         } else {
             Debug.LogError($"Weapon {id} not exist!");
         }
     }
+
+    public WeaponsStaticData GetWeaponsStaticData() => _staticData.WeaponsStatic;
 
 }

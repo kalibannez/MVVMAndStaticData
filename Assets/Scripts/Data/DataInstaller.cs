@@ -7,7 +7,6 @@ public class DataInstaller : MonoInstaller {
    private StaticData _staticData;
    
    public override void InstallBindings() {
-      Debug.Log("1");
       Container.BindInstance(_staticData);
    }
 
